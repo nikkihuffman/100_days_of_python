@@ -1,0 +1,109 @@
+  100 days of Python
+
+Day 3-- Conditionals
+
+if/elif/else -- only one condition will go through. First one that succeeds will execute.
+if condition:
+	do this
+elif condition2:
+	do this instead
+else:
+	do that
+
+One = is assigning a value
+Two == is checking whether something is True or False (in a condition)
+
+height = 120 (variable height equals 120)
+
+if height == 120 (condition checking whether the variable height equals 120 or not)
+if height != 120 (not equal)
+
+Modulo Operator: % --> works out the remainder after division
+10/2 = 5
+10%2 = 0
+
+if/if/if conditional -- any or all of these conditions could succeed and execute.
+
+Logical Operators:
+A and B
+C or D
+not E
+
+print('''
+many lines of text with anything we want including " and ' 
+''')
+
+Day 4-- randomness
+pseudorandom number generators
+
+import random 
+random.randint(a,b) --> random integer between a and b (inclusive)
+
+"random" is a module-- each module is responsible for a different bit of functionality.
+
+You can even create your own modules as separate py files, import, and then call variables, etc from that py file.
+
+eg: my_module.py
+my_favorite_number = 3.1415
+
+back in the regular code:
+import my_module
+print(my_module.my_favorite_number) 
+output- 3.1415
+
+random.random()
+generates a float 0 <= x < 1
+can multiply by 10, 100 etc to get bigger random numbers. 
+
+random.uniform(a, b) float between a and b inclusive
+
+Lists: collection of items in a particular order inside []separated by ,
+fruits = ["apple", "banana", "grape"]
+fruits[0] is apple, fruits[1] is banana, etc.
+fruits[-1] is "grape" (the last index)
+
+fruits[0] = 'kumquat' --> will add kumquat to beginning of list
+fruits.append('strawberry') --> adds strawberry to the end of the list
+
+random.choice(list) --> chooses a random item from a list
+
+Index out of range error
+num_states = len(states_of_america) --> equalsl 50, but there's no index 50 in that list.
+subtract 1 from total length.
+print(states_of_america[num_states - 1])
+
+
+Nested lists
+fruits = ['apple', 'banana', 'strawberry']
+vegetables = ['kale', 'carrot', 'celery']
+
+food = [fruits, vegetables]
+food will be this: 
+[['apple', 'banana', 'strawberry'], ['kale', 'carrot', 'celery']]
+
+food[0] = whole fruit list
+food[0][0] = index 0 of fruit list = apple
+
+Day 5 - Loops--> allows us to do the same code multiple times just writing it once.
+for item in list_of_items:
+	#Do something to each item
+
+fruits = ["Apple", "Peach", "Pear"]
+for fruit in fruits:
+    print(fruit)
+
+output:
+Apple
+Peach
+Pear
+
+assigning the variable name fruit to each item in the list fruits
+
+"Inside" the loop means indented underneath the line with the colon. If indented it will be repeated each time.
+
+print(sum(student_scores))
+
+
+C:\Users\domin\PycharmProjects\100 Days of Code - The Complete Python Pro Bootcamp
+
+https://github.com/nikkihuffman/100_days_of_python.git
