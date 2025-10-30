@@ -1,28 +1,45 @@
 from turtle import Screen, Turtle
+from snake import Snake, Treat
+import random
+import time
 
 screen = Screen()
 screen.setup(width = 600, height = 600)
-screen.bgcolor("black")
+screen.bgcolor("#594f4f")
 screen.title("My Snake Game")
 screen.tracer(0)
+turtle = Turtle()
+snake = Snake()
 
-x_start = 0
-segments = []
+screen.listen()
+screen.onkey(snake.up, "Up")
+screen.onkey(snake.down, "Down")
+screen.onkey(snake.left, "Left")
+screen.onkey(snake.right, "Right")
 
-for i in range(3):
-    new_segment = Turtle(shape = "square")
-    new_segment.color("white")
-    new_segment.penup()
-    new_segment.goto(x_start, 0)
-    x_start -= 20
-    segments.append(new_segment)
-screen.update()
+
 
 game_is_on = True
+treat = Treat()
+score = 0
+scoreboard = f"Score: {score}"
 
 while game_is_on:
-    for seg in segments:
-        seg.forward(20)
+    turtle.write(scoreboard)
+    screen.update()
+    time.sleep(0.15)
+    snake.move()
+    if abs(snake.head.xcor()) > 295 or abs(snake.head.ycor()) > 295:
+        game_is_on = False
+    if abs(treat.treat.xcor() - snake.head.xcor()) <20 and abs(treat.treat.ycor() - snake.head.ycor()) <20:
+        score += 1
+        treat.new_treat()
+
+
+
+#treat color = "#ff4e50"
+
+
 
 
 
